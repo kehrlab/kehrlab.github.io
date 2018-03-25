@@ -1,0 +1,39 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+$content-width:    1000px !default;
+$brand-color:      #bb0000 !default;
+
+.figure-caption {
+  text-align: center;
+  font-size: small;
+  padding-top: 10px;
+}
+
+.lab-member-table {
+  width:49%;
+  display:inline-block;
+  border-style:hidden!important;
+}
+
+.lab-member-cell {
+  border-style:hidden!important;
+  vertical-align: top;
+  padding: 0px;
+  padding-right: 20px;
+}
+
+@import "minima";
+
+h1, h2, h3, h4, h5, h6 {
+  color: $grey-color;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2,h3 {
+  text-transform: uppercase;
+}
