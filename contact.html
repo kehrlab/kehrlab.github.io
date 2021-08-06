@@ -2,18 +2,20 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Contact | JRG Genome Informatics</title>
-<meta name="generator" content="Jekyll v3.7.3" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Contact | Algorithmic Bioinformatics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Contact" />
 <meta property="og:locale" content="en_US" />
 <link rel="canonical" href="https://username.github.io/contact.html" />
 <meta property="og:url" content="https://username.github.io/contact.html" />
-<meta property="og:site_name" content="JRG Genome Informatics" />
+<meta property="og:site_name" content="Algorithmic Bioinformatics" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Contact" />
 <script type="application/ld+json">
-{"url":"https://username.github.io/contact.html","@type":"WebPage","headline":"Contact","@context":"http://schema.org"}</script>
+{"@type":"WebPage","url":"https://username.github.io/contact.html","headline":"Contact","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://username.github.io/feed.xml" title="JRG Genome Informatics" /><script type='text/javascript'>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://username.github.io/feed.xml" title="Algorithmic Bioinformatics" /><script type='text/javascript'>
   /* global google */
 /* global MarkerClusterer */
 // eslint-disable-next-line no-unused-vars
@@ -38,7 +40,8 @@ var jekyllMaps = (function() {
   function initializeMap() {
     options = {
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      center: new google.maps.LatLng(0, 0)
+      center: new google.maps.LatLng(0, 0),
+      styles: []
     }
     mapReady = true
     render()
@@ -95,6 +98,7 @@ var jekyllMaps = (function() {
         position: position,
         title: location.title,
         image: location.image,
+        popup_html: location.popup_html,
         icon: location.icon || mapOptions.markerIcon,
         url: markerUrl(mapOptions.baseUrl, location.url),
         url_text: location.url_text,
@@ -113,14 +117,19 @@ var jekyllMaps = (function() {
 
     function markerPopup() {
       var content = '<div class="map-info-window"><h5>' + this.title + '</h5>'
-      var imageTag =
-        this.image.length > 0 &&
-        '<img src="' + this.image + '" alt="' + this.title + '"/>'
-      if (this.url.length > 0) {
-        var linkContent = imageTag || this.url_text || 'View'
-        content += '<a href="' + this.url + '">' + linkContent + '</a>'
-      } else if (imageTag) {
-        content += imageTag
+      if (this.popup_html.length > 0) {
+        content += this.popup_html
+      }
+      else {
+        var imageTag =
+          this.image.length > 0 &&
+          '<img src="' + this.image + '" alt="' + this.title + '"/>'
+        if (this.url.length > 0) {
+          var linkContent = imageTag || this.url_text || 'View'
+          content += '<a href="' + this.url + '">' + linkContent + '</a>'
+        } else if (imageTag) {
+          content += imageTag
+        }
       }
       content += '</div>'
       infoWindow.setContent(content)
@@ -172,22 +181,15 @@ if (typeof Object.assign !== 'function') {
 }
 
 </script>
-<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD8czW17RKUzPUsMs-JF-p2vkCtyBnwHfI&callback=jekyllMaps.initializeMap'></script>
-
-<script async defer src='https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js'
-        onload='jekyllMaps.initializeCluster({})'></script>
-
 </head>
 <body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">JRG Genome Informatics</a><nav class="site-nav">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Algorithmic Bioinformatics</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
             <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
             </svg>
           </span>
         </label>
@@ -204,35 +206,41 @@ if (typeof Object.assign !== 'function') {
   </header>
 
   <div class="post-content">
-    <h2 id="e-mail">E-Mail</h2>
+    <h2 id="e-mail-and-telephone">E-Mail and Telephone</h2>
 
-<p>firstname DOT lastname AT bihealth DOT de</p>
+<p>Please find our contact information on the institutes’ websites.</p>
 
-<h2 id="visiting-address">Visiting Address</h2>
+<h2 id="visiting-address-regensburg">Visiting Address (Regensburg)</h2>
 
-<p>We are located on Charité Campus Mitte just a short (&lt; 10 min) walk away from the main train station (Hauptbahnhof). The closest bus and tram stop is Invalidenpark. The closest S- and U-Bahn stop is Hauptbahnhof.</p>
+<p>We are located on the campus of the University hospital Regensburg in the building of the RCI (section D5).</p>
 
-<p>Our campus address is Virchowweg 20 but it is easiest to enter the building via Invalidenstraße 80. The two buildings are connected and you can find us on level 03 by following the signs to the BIH Core Unit Bioinformatics (CUBI).</p>
-
-<div id="d4ea8255-cb25-4da4-9e19-6eb308e9389f" style="width:100%;height:400px;"></div>
+<div id="006cb29a-6f6f-4ad8-aa6b-8b37b31a0696" style="width:100%;height:400px;" class=" jekyll-map"></div>
 <script type="text/javascript">
   jekyllMaps.register(
-    'd4ea8255-cb25-4da4-9e19-6eb308e9389f',
-    [{"latitude":52.527589,"longitude":13.374835,"title":"Contact","icon":null,"url":"/contact.html","url_text":null,"image":""}],
-    {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"customZoom":15}
+    '006cb29a-6f6f-4ad8-aa6b-8b37b31a0696',
+    [{"latitude":"48.988327","longitude":"12.086106","title":"Contact","icon":null,"url":"/contact.html","image":"","popup_html":""}],
+    {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":15}
   );
 </script>
 
 <p><br /></p>
 
-<h2 id="postal-address">Postal Address</h2>
+<h2 id="visiting-address-berlin">Visiting Address (Berlin)</h2>
 
-<p>Berlin Institute of Health<br />
-JRG Genome Informatics<br />
-c/o Charité<br />
-Charitéplatz 1<br />
-10117 Berlin<br />
-Germany</p>
+<p>In Berlin we are located on Charité Campus Mitte just a short (&lt; 10 min) walk away from the main train station (Hauptbahnhof). The closest bus and tram stop is Invalidenpark. The closest S- and U-Bahn stop is Hauptbahnhof.</p>
+
+<p>Our campus address is Virchowweg 20 but it is easiest to enter the building via Invalidenstraße 80. The two buildings are connected and you can find us on level 03 by following the signs to the BIH Core Unit Bioinformatics (CUBI).</p>
+
+<div id="02f94000-6f9d-495f-89cb-025ce910b9f4" style="width:100%;height:400px;" class=" jekyll-map"></div>
+<script type="text/javascript">
+  jekyllMaps.register(
+    '02f94000-6f9d-495f-89cb-025ce910b9f4',
+    [{"latitude":"52.527589","longitude":"13.374835","title":"Contact","icon":null,"url":"/contact.html","image":"","popup_html":""}],
+    {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":15}
+  );
+</script>
+
+<p><br /></p>
 
   </div>
 
@@ -244,7 +252,7 @@ Germany</p>
 
   <div class="wrapper">
 
-<!--    <h2 class="footer-heading">JRG Genome Informatics</h2>   -->
+<!--    <h2 class="footer-heading">Algorithmic Bioinformatics</h2>   -->
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1"><ul class="social-media-list"><li><a href="https://github.com/kehrlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">kehrlab</span></a></li></ul>
@@ -258,6 +266,60 @@ Germany</p>
   </div>
 
 </footer>
+          <script async defer>
+
+
+            // Load maps only when DOM is loaded
+            document.addEventListener("DOMContentLoaded", function() {
+                if (window.google && window.google.maps && jekyllMaps) {
+                  // Maps script already loaded -> Execute callback method
+                  jekyllMaps.initializeMap();
+                } else if (!('IntersectionObserver' in window) ||
+                !('IntersectionObserverEntry' in window) ||
+                !('intersectionRatio' in window.IntersectionObserverEntry.prototype)) {
+                  // Intersection Observer -> Backup solution : load maps now
+                  lazyLoadGoogleMap();
+                } else {
+                  // Google Maps not loaded & Intersection Observer working -> Enable it
+                  enableMapsObserver();
+                }
+            });
+
+            function enableMapsObserver() {
+              // Enable Observer on all Maps
+              var maps = document.getElementsByClassName('jekyll-map');
+
+              const observer = new IntersectionObserver(function(entries, observer) {
+                // Test if one of the maps is in the viewport
+                var isIntersecting = typeof entries[0].isIntersecting === 'boolean' ? entries[0].isIntersecting : entries[0].intersectionRatio > 0;
+                if (isIntersecting) {
+                  lazyLoadGoogleMap();
+                  observer.disconnect();
+                }
+              });
+
+              for(var i = 0; i < maps.length; i++) {
+                observer.observe(maps[i]);
+              }
+            }
+
+            function lazyLoadGoogleMap() {
+                // If google maps api script not already loaded
+                if(!window.google || !window.google.maps) {
+                  var fjs = document.getElementsByTagName('script')[0];
+                  var js = document.createElement('script');
+                  js.id = 'gmap-api';
+                  js.setAttribute('async', '');
+                  js.setAttribute('defer', '');
+                  js.src = "//maps.google.com/maps/api/js?key=AIzaSyD8czW17RKUzPUsMs-JF-p2vkCtyBnwHfI&callback=jekyllMaps.initializeMap";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }
+            }
+          </script>
+
+<script async defer src='https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js'
+        onload='jekyllMaps.initializeCluster({})'></script>
+
 </body>
 
 </html>
